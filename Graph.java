@@ -8,6 +8,7 @@ public class Graph {
 	public City currentCity;
 	public City nextCity;
 	public ArrayList currentRoute;
+	public ArrayList bestRoute;
 	public int CrowFlyDist;
 	int xDist;
 	int yDist;
@@ -65,8 +66,20 @@ public class Graph {
 	public ArrayList ShortestTimeRoute() {
 		// This will be an arrayList of all the cities to travel through
 		// to travel the shortest distance between two cities
+		
+		// This will call the A* stuff and then set the shortest route to the route the A* returns
+		this.bestRoute = null;
+		
 				
-		return null;
+		return this.bestRoute;
+	}
+	
+	public ArrayList ShortestDistanceRoute() {
+		this.bestRoute = null;
+		
+		// This should get the shortest distance route from the A* stuff
+		
+		return this.bestRoute;
 	}
 
 }

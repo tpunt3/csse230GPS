@@ -4,9 +4,10 @@ import java.util.ArrayList;
 public class Graph {
 	
 	public ArrayList waypoints;
-	public CityClass target;
-	public CityClass currentCity;
-	public CityClass nextCity;
+	public City target;
+	public City currentCity;
+	public City nextCity;
+	public ArrayList currentRoute;
 	public int CrowFlyDist;
 	int xDist;
 	int yDist;
@@ -19,47 +20,38 @@ public class Graph {
 		double distance = 0;
 	}
 	
-	public void SetCurrentCity(CityClass city) {
-		this.currentCity = city;
+	public void SetCurrentCity(City setCity) {
+		this.currentCity = setCity;
 	}
 	
-	public void setTarget(CityClass finishPoint) {
+	public void setTarget(City finishPoint) {
 		this.target = finishPoint;
 	}
 	
 	public double ShortestConnection() {
 		// This will be an arrayList of all the cities to travel through
 		// to travel the shortest distance between two cities
-		int xDist = 0;
-		int yDist = 0;
+		double xDist = 0;
+		double yDist = 0;
 		double distance = 0;
 		
-		xDist = (Math.abs(currentCity.getX()) - Math.abs(nextCity.getX()));
-		yDist = (Math.abs(currentCity.getY()) - Math.abs(nextCity.getY()));
-		distance = Math.sqrt(xDist^2 + yDist^2);
-		
-		// xDist = math.abs(Point 2x - Point 1x) ^2
-		// yDist = math.abs(Point2y - Point 1y) ^2
-		// distance = math.sqrt(xDist^2 + yDist^2)
-		
+		xDist = (Math.abs(currentCity.GetLong()) - Math.abs(nextCity.GetLong()));
+		yDist = (Math.abs(currentCity.GetLattitude()) - Math.abs(nextCity.GetLattitude()));
+		distance = Math.sqrt(xDist*xDist + yDist*yDist);
 		
 		return distance;
 	}
 	
 	public double CalcDistanceRemaining() {
 		// calculates the as the crow flies distance remaining
-		// xDist = math.abs(currentCity X - target X);
-		// yDist = math.abs(currentCity Y - target Y);
 		
-		//CrowFlyDist = Math.sqrt(xDist^2 + yDist^2);
-		
-		int xDist = 0;
-		int yDist = 0;
+		double xDist = 0;
+		double yDist = 0;
 		double CrowFlyDistance = 0;
 		
-		xDist = (Math.abs(currentCity.getX()) - Math.abs(nextCity.getX()));
-		yDist = (Math.abs(currentCity.getY()) - Math.abs(nextCity.getY()));
-		CrowFlyDistance = Math.sqrt(xDist^2 + yDist^2);
+		xDist = (Math.abs(currentCity.GetLong()) - Math.abs(nextCity.GetLong()));
+		yDist = (Math.abs(currentCity.GetLattitude()) - Math.abs(nextCity.GetLattitude()));
+		CrowFlyDistance = Math.sqrt(xDist*xDist + yDist*yDist);
 		
 		return CrowFlyDistance;
 	}

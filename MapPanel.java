@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 
 
 public class MapPanel extends Panel {
@@ -13,18 +15,20 @@ public class MapPanel extends Panel {
 
 	public MapPanel (ButtonPanel bPanel){
 		super();
-		try{
-		this.US = ImageIO.read(new File("src\\map.gif"));
-		} catch (IOException ex) {
-			// handle exception...
-		}
+
+		ImageIcon USA = new ImageIcon("src\\map.png");
+		JLabel label = new JLabel("",USA,JLabel.CENTER);
+		this.add(label);
 		
 		this.setVisible(true);
 	}
 	
 
-	public void paintComponent(Graphics graphicsObject) {
-		graphicsObject.drawImage(this.US, 0, 0, null);
+	public void paintComponent(Graphics go) {
+		super.paintComponents(go);
+		
+		go.drawImage(this.US, 0, 0, null);
+		
 	}
 	
 	

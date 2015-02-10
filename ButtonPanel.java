@@ -17,8 +17,8 @@ public class ButtonPanel extends Panel {
 		this.setBackground(Color.WHITE);
 		
 		//making the buttons
-		this.tButton = new TimeButton("Time",this);
-		this.dButton = new DistanceButton("Distance", this);
+		this.tButton = new TimeButton("Shortest Time",this);
+		this.dButton = new DistanceButton("Shortest Distance", this);
 		
 		//making the comboboxes
 		String[] capitals = {"Choose a City: " ,"Olympia", "Indianapolis", "Baton Rouge", "Tucson"};

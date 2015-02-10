@@ -1,39 +1,38 @@
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
 
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+public class CCPanel extends JPanel {
 
-public class CCPanel extends JPanel{
-	
 	ButtonPanel bPanel;
 	MapPanel mPanel;
+	DirectionsPanel dPanel;
 
-	public CCPanel(CCFrame frame){
-		
+	public CCPanel(CCFrame frame) {
+
 		super();
-		
-		BorderLayout layout = new BorderLayout();
-		this.setLayout(layout);
+		//this.setSize(new Dimension(1300, 900));
+		this.setPreferredSize(new Dimension(1000, 700));
 
-		
-		this.bPanel = new ButtonPanel();		
-		layout.addLayoutComponent(bPanel, layout.NORTH);
-		this.add(bPanel);
+		this.setLayout(new BorderLayout());
 
-		this.mPanel = new MapPanel();
+		this.bPanel = new ButtonPanel();
+		this.add(bPanel, BorderLayout.NORTH);
+
+		this.mPanel = new MapPanel(bPanel);
+		this.add(mPanel, BorderLayout.CENTER);
 		
-		
-		
+		this.dPanel = new DirectionsPanel(bPanel);
+		this.add(dPanel, BorderLayout.WEST);
+
 		this.setVisible(true);
 	}
-	
-	public void paintComponent(Graphics g){
-		//g.drawImage(img, x, y, observer);
-		//g.setColor(Color.WHITE);
+
+	public void paintComponent(Graphics g) {
+
 	}
-	
 }

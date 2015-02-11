@@ -8,7 +8,6 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-
 public class MapPanel extends Panel {
 	
 	private BufferedImage US;
@@ -23,7 +22,6 @@ public class MapPanel extends Panel {
 		this.setVisible(true);
 	}
 	
-
 	public void paintComponent(Graphics go) {
 		super.paintComponents(go);
 		

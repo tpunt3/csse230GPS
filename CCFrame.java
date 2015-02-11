@@ -12,7 +12,7 @@ public class CCFrame extends JFrame{
 	public CCFrame(){
 		super();
 		
-		this.setSize(new Dimension(1300, 900));
+		this.setSize(new Dimension(1300, 600));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setLayout(new FlowLayout());

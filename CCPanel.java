@@ -11,23 +11,26 @@ public class CCPanel extends JPanel {
 	ButtonPanel bPanel;
 	MapPanel mPanel;
 	DirectionsPanel dPanel;
+	POIPanel pPanel;
 
 	public CCPanel(CCFrame frame) {
 
 		super();
-		//this.setSize(new Dimension(1300, 900));
-		this.setPreferredSize(new Dimension(1000, 700));
+		this.setPreferredSize(new Dimension(1250, 600));
 
-		this.setLayout(new BorderLayout());
+		this.setLayout(new BorderLayout(5,5));
 
-		this.bPanel = new ButtonPanel();
+		this.dPanel = new DirectionsPanel(bPanel);
+		this.pPanel = new POIPanel();
+		this.bPanel = new ButtonPanel(mPanel, dPanel, pPanel);
+	
 		this.add(bPanel, BorderLayout.NORTH);
 
 		this.mPanel = new MapPanel(bPanel);
 		this.add(mPanel, BorderLayout.CENTER);
 		
-		this.dPanel = new DirectionsPanel(bPanel);
 		this.add(dPanel, BorderLayout.WEST);
+		this.add(pPanel, BorderLayout.EAST);
 
 		this.setVisible(true);
 	}

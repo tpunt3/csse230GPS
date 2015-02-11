@@ -1,4 +1,5 @@
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Panel;
 import java.awt.TextArea;
 
@@ -10,31 +11,41 @@ import javax.swing.JTextField;
 
 
 public class DirectionsPanel extends Panel {
+	public JTextArea directionsText;
+	public JTextArea distText;
+	public JTextArea timeText;
 	
 	public DirectionsPanel (ButtonPanel bPanel){
 		super();
-		this.setSize(new Dimension(200, 300));
+		this.setSize(new Dimension(200, 200));
 		
 		this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
 		
 		JLabel directions = new JLabel("Directions:");
 		this.add(directions);
 		
-		JTextArea ta = new JTextArea(10,30);
-		ta.setLineWrap(true);
-		this.add(ta);
+		this.directionsText = new JTextArea(10,30);
+		directionsText.setLineWrap(true);		
+		directionsText.setMaximumSize(new Dimension(450,370));
+
+//		ta.setFont(new Font("Arial", Font.PLAIN, 15));
+		this.add(directionsText);
 		
 		JLabel time = new JLabel("Time:");
 		this.add(time);
-		JTextArea ta2 = new JTextArea(1,25);
-		ta2.setLineWrap(true);
-		this.add(ta2);
+		this.timeText = new JTextArea(1,25);
+		timeText.setLineWrap(true);
+		timeText.setMaximumSize(new Dimension(450,35));
+//		ta2.setFont(new Font("Arial", Font.PLAIN, 15));
+		this.add(timeText);
 		
 		JLabel dist = new JLabel("Distance:");
 		this.add(dist);
-		JTextArea ta3 = new JTextArea(1,25);
-		ta3.setLineWrap(true);
-		this.add(ta3);
+		this.distText = new JTextArea(1,25);
+		distText.setMaximumSize(new Dimension(450,35));
+		distText.setLineWrap(true);
+//		ta3.setFont(new Font("Arial", Font.PLAIN, 15));
+		this.add(distText);
 		
 		this.setVisible(true);
 	}

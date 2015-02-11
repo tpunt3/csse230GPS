@@ -15,14 +15,18 @@ public class TimeButton extends Button implements ActionListener {
 	private int start;
 	private int stop;
 	private ButtonPanel parent;
+	private MapPanel mPanel;
+	private DirectionsPanel dPanel;
 
 	public TimeButton() throws HeadlessException {
 		// TODO Auto-generated constructor stub
 	}
 
-	public TimeButton(String buttonText, ButtonPanel parent) {
+	public TimeButton(String buttonText, ButtonPanel parent, MapPanel mP, DirectionsPanel dP, POIPanel pPanel) {
 		super(buttonText);
 		this.parent = parent;
+		this.mPanel = mP;
+		this.dPanel = dP;
 		color = Color.LIGHT_GRAY;
 		setBackground(this.color);
 		addActionListener(this);
@@ -32,7 +36,12 @@ public class TimeButton extends Button implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
-		
+		this.dPanel.directionsText.setText(null);
+		this.dPanel.timeText.setText(null);
+		this.dPanel.distText.setText(null);
+		this.dPanel.directionsText.insert("Stop 1 \nStop 2 \nStop 3",0);
+		this.dPanel.timeText.insert("One Million Hours", 0);
+		this.dPanel.distText.insert("One Million Miles", 0);
 	}	
 
 }

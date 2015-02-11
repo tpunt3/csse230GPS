@@ -9,16 +9,17 @@ public class Graph {
 	public City nextCity;
 	public ArrayList currentRoute;
 	public ArrayList bestRoute;
-	public int CrowFlyDist;
-	int xDist;
-	int yDist;
-	double distance;
+	public double CrowFlyDist;
+	public double totalDistance;
+	public double xDist;
+	public double yDist;
+	public double PTPDistance;
 	
 	public Graph(){
 		waypoints = new ArrayList();
-		int xDist = 0;
-		int yDist = 0;
-		double distance = 0;
+		this.xDist = 0;
+		this.yDist = 0;
+		this.PTPDistance = 0;
 	}
 	
 	public void SetCurrentCity(City setCity) {
@@ -32,36 +33,30 @@ public class Graph {
 	public double ShortestConnection() {
 		// This will be an arrayList of all the cities to travel through
 		// to travel the shortest distance between two cities
-		double xDist = 0;
-		double yDist = 0;
-		double distance = 0;
+		this.xDist = 0;
+		this.yDist = 0;
+		this.PTPDistance = 0;
 		
-		xDist = (Math.abs(currentCity.GetLong()) - Math.abs(nextCity.GetLong()));
-		yDist = (Math.abs(currentCity.GetLattitude()) - Math.abs(nextCity.GetLattitude()));
-		distance = Math.sqrt(xDist*xDist + yDist*yDist);
+		this.xDist = (Math.abs(currentCity.GetLong()) - Math.abs(nextCity.GetLong()));
+		this.yDist = (Math.abs(currentCity.GetLattitude()) - Math.abs(nextCity.GetLattitude()));
+		this.PTPDistance = Math.sqrt(this.xDist*this.xDist + this.yDist*this.yDist);
 		
-		return distance;
+		return PTPDistance;
 	}
 	
 	public double CalcDistanceRemaining() {
 		// calculates the as the crow flies distance remaining
 		
-		double xDist = 0;
-		double yDist = 0;
-		double CrowFlyDistance = 0;
+		this.xDist = 0;
+		this.yDist = 0;
+		this.CrowFlyDist = 0;
 		
 		xDist = (Math.abs(currentCity.GetLong()) - Math.abs(nextCity.GetLong()));
 		yDist = (Math.abs(currentCity.GetLattitude()) - Math.abs(nextCity.GetLattitude()));
-		CrowFlyDistance = Math.sqrt(xDist*xDist + yDist*yDist);
+		CrowFlyDist = Math.sqrt(this.xDist*this.xDist + this.yDist*this.yDist);
 		
-		return CrowFlyDistance;
+		return CrowFlyDist;
 	}
-	
-//	public int GetDistanceRemaining() {
-//		// returns CrowFliesDistance
-//		
-//		return CrowFlyDist;
-//	}
 	
 	public ArrayList ShortestTimeRoute() {
 		// This will be an arrayList of all the cities to travel through
@@ -70,7 +65,6 @@ public class Graph {
 		// This will call the A* stuff and then set the shortest route to the route the A* returns
 		this.bestRoute = null;
 		
-				
 		return this.bestRoute;
 	}
 	

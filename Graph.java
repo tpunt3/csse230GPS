@@ -68,6 +68,18 @@ public class Graph {
 		return this.bestRoute;
 	}
 	
+	public int TimeBetweenPoints() {
+		this.xDist = 0;
+		this.yDist = 0;
+		this.PTPDistance = 0;
+		
+		this.xDist = (Math.abs(currentCity.GetLong()) - Math.abs(nextCity.GetLong()));
+		this.yDist = (Math.abs(currentCity.GetLattitude()) - Math.abs(nextCity.GetLattitude()));
+		this.PTPDistance = Math.sqrt(this.xDist*this.xDist + this.yDist*this.yDist);
+		
+		return this.PTPDistance/currentCity.speedLimit();
+	}
+	
 	public ArrayList ShortestDistanceRoute() {
 		this.bestRoute = null;
 		

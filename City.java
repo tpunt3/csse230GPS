@@ -14,6 +14,7 @@ public class City {
 	public int Population;
 	public int Rating;
 	public ArrayList Neighbors;
+	public int speedLimit;
 	
 	
 	public City(String information) {
@@ -95,5 +96,9 @@ public class City {
 	
 	public ArrayList GetNeighbors() {
 		return this.Neighbors;
+	}
+	
+	public int GetSpeedLimit() {
+		return this.speedLimit;
 	}
 }

@@ -4,9 +4,6 @@ import java.util.ArrayList;
 public class Graph {
 	
 	public ArrayList waypoints;
-	public City target;
-	public City currentCity;
-	public City nextCity;
 	public ArrayList currentRoute;
 	public ArrayList bestRoute;
 	public double CrowFlyDist;
@@ -22,15 +19,7 @@ public class Graph {
 		this.PTPDistance = 0;
 	}
 	
-	public void SetCurrentCity(City setCity) {
-		this.currentCity = setCity;
-	}
-	
-	public void setTarget(City finishPoint) {
-		this.target = finishPoint;
-	}
-	
-	public double ShortestConnection() {
+	public double ShortestConnection(City currentCity, City nextCity) {
 		// This will be an arrayList of all the cities to travel through
 		// to travel the shortest distance between two cities
 		this.xDist = 0;
@@ -44,15 +33,15 @@ public class Graph {
 		return PTPDistance;
 	}
 	
-	public double CalcDistanceRemaining() {
+	public double CalcDistanceRemaining(City currentCity, City target) {
 		// calculates the as the crow flies distance remaining
 		
 		this.xDist = 0;
 		this.yDist = 0;
 		this.CrowFlyDist = 0;
 		
-		xDist = (Math.abs(currentCity.GetLong()) - Math.abs(nextCity.GetLong()));
-		yDist = (Math.abs(currentCity.GetLattitude()) - Math.abs(nextCity.GetLattitude()));
+		xDist = (Math.abs(currentCity.GetLong()) - Math.abs(target.GetLong()));
+		yDist = (Math.abs(currentCity.GetLattitude()) - Math.abs(target.GetLattitude()));
 		CrowFlyDist = Math.sqrt(this.xDist*this.xDist + this.yDist*this.yDist);
 		
 		return CrowFlyDist;
@@ -68,7 +57,7 @@ public class Graph {
 		return this.bestRoute;
 	}
 	
-	public double TimeBetweenPoints() {
+	public double TimeBetweenPoints(City currentCity, City nextCity) {
 		this.xDist = 0;
 		this.yDist = 0;
 		this.PTPDistance = 0;

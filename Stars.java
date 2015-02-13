@@ -7,7 +7,6 @@ public class Stars {
 //public class Stars extends JPanel
 	
 	public Color currentColor;
-	//public Graphics graphic;
 	public Boolean assertHolder;
 	
 	public Stars() {
@@ -34,13 +33,10 @@ public class Stars {
 	}
 	
 	//@Override
-	public void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g, Color starColor, int latitude, int longitude) {
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.setColor(Color.RED);
-		g2d.fillOval(0, 0, 30, 30);
-		//g2d.drawOval(0, 50, 30, 30);		
-
-		//g2d.draw(new Ellipse2D.Double(0, 100, 30, 30));
+		g2d.setColor(starColor);
+		g2d.fillOval(latitude, longitude, 8, 8);
 	}
 	
 

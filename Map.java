@@ -1,9 +1,12 @@
+import java.awt.Color;
+import java.awt.Graphics;
 import java.util.ArrayList;
 
 
 public class Map {
 	
 	public ArrayList<Stars> starList;
+	public Graphics graphics;
 	
 	public Map() {
 		starList = new ArrayList<Stars>();
@@ -12,10 +15,12 @@ public class Map {
 	public void DrawStars() {
 		for(int i = 0; i < starList.size()-1; i++) {
 			if(starList.get(i).getValue()==true) {
-				starList.get(i).drawOn();
+				starList.get(i).paintComponent(graphics, Color.RED, 0, 0);
+				// where the 0's are the x and y locations of where to draw the object
 			}
 			else {
-				// do nothing
+				starList.get(i).paintComponent(graphics, Color.BLACK, 0, 0);
+				// where the 0's are the x and y locations of where to draw the object
 			}
 		}
 	}

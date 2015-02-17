@@ -13,7 +13,8 @@ public class City {
 	public double Latitude;
 	public int Population;
 	public int Rating;
-	public ArrayList<City> Neighbors;
+	public ArrayList<String> Neighbors = new ArrayList<String>();
+	public ArrayList<Double> Distance = new ArrayList<Double>();
 	public City previous;
 	public double f;
 	public double g;
@@ -43,15 +44,36 @@ public class City {
 		this.Longitude = Double.parseDouble(information.substring(0,longitudeEnd));
 		
 		information = information.substring(longitudeEnd+1);
-		//int latitudeEnd = information.indexOf(',');
-		System.out.println(information);
-		System.out.println(information.substring(0));
-		this.Latitude = Double.parseDouble(information.substring(0));
+		int latitudeEnd = information.indexOf(',');
+		this.Latitude = Double.parseDouble(information.substring(0,latitudeEnd));
 		
-		System.out.println("this: "+this.CityName+ this.StateName+ this.Longitude+ this.Latitude+ this.Population+ this.Rating);
+		information = information.substring(latitudeEnd+1);
+		int speedEnd = information.indexOf(',');
+		this.speedLimit=Integer.parseInt(information.substring(0,speedEnd));
+		
+		int neighborEnd=-1;
+		int distEnd = -1;
+		information=information.substring(speedEnd+1);
+		while(information.contains(",")){
+			neighborEnd = information.indexOf(',');
+			this.Neighbors.add(information.substring(0,neighborEnd));
+			information=information.substring(neighborEnd+1);
+			
+			distEnd = information.indexOf(',');
+			this.Distance.add(Double.parseDouble(information.substring(0,distEnd)));
+			information = information.substring(distEnd+1);
+		}
+		int lastNeighborEnd = information.indexOf(';');
+		Neighbors.add(information.substring(0,lastNeighborEnd));
+		information = information.substring(lastNeighborEnd+1);
+		
+		distEnd = information.indexOf(';');
+		Neighbors.add(information.substring(0,distEnd));
+	
+		
+			
 		
 		
-		this.Neighbors = null;
 	}
 	
 	public void SetName(String name) {

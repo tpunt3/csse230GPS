@@ -30,8 +30,6 @@ public class Graph {
 		for(int i =0; i<cities.size(); i++){
 			for(int j=0;j<cities.get(i).neighborString.size();j++){
 				cities.get(i).Neighbors.add(cityHash.get(cities.get(i).neighborString.get(j)));
-				System.out.println("city at i: "+cities.get(i).CityName);
-				System.out.println("neighbor added: "+cities.get(i).Neighbors.get(j).CityName);
 			}
 		}
 		

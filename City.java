@@ -66,7 +66,7 @@ public class City {
 		information = information.substring(lastNeighborEnd+1);
 		
 		distEnd = information.indexOf(';');
-		neighborString.add(information.substring(0,distEnd));
+		Distance.add(Double.parseDouble(information.substring(0,distEnd)));
 	
 		
 			
@@ -98,6 +98,7 @@ public class City {
 		this.Neighbors = elements;
 	}
 	
+	
 	public String GetName() {
 		return this.CityName;
 	}
@@ -125,6 +126,9 @@ public class City {
 	public ArrayList GetNeighbors(City current){
 		return current.Neighbors;
 	}
+	
+	
+	
 	
 	public int GetSpeedLimit() {
 		return this.speedLimit;

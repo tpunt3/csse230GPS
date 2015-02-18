@@ -1,47 +1,49 @@
-Alabama,Montgomery,4849377,27,0,0
-Arizona,Phoenix,6731484,36,0,0
-Arkansas,Little Rock,2966369,6,0,0
-California,Sacramento,38802500,43,0,0
-Colorado,Denver,5355866,26,0,0
-Connecticut,Hartford,3596677,48,0,0
-Delaware,Dover,935614,39,0,0
-District of Columbia,Washington,658893,9,0,0
-Florida,Tallahassee,19893297,38,0,0
-Georgia,Atlanta,10097343,5,0,0
-Idaho,Boise,1634464,19,0,0
-Illinois,Springfield,12880580,47,0,0
-Indiana,Indianapolis,6596855,40,0,0
-Iowa,Des Moines,3107126,42,0,0
-Kansas,Topeka,2904021,35,0,0
-Kentucky,Frankfort,4413457,22,0,0
-Louisiana,Baton Rouge,4649676,33,0,0
-Maine,Augusta,1330089,32,0,0
-Maryland,Annapolis,5976407,8,0,0
-Massachusetts,Boston,6745408,30,0,0
-Michigan,Lansing,9909877,41,2936.120498,-5847.258227
-Minnesota,St. Paul,5457173,16,3088.411115,-6438.390349
-Mississippi,Jackson,2994079,18,2214.449171,-6238.725141
-Missouri,Jefferson City,6063589,31,2650.258952,-6375.820031
-Montana,Helena,1023579,15,3201.490591,-7747.800667
-Nebraska,Lincoln,1881503,21,2803.952168,-6686.076528
-Nevada,Carson City,2839099,45,2690.658736,-8282.190109
-New Hampshire,Concord,1326813,37,2969.553184,-4948.344778
-New Jersey,Trenton,8938175,46,2763.543314,-5170.14198
-New Mexico,Santa Fe,2085572,4,2450.613407,-7328.520603
-New York,Albany,19746227,50,2931.058733,-5102.724783
-North Carolina,Raleigh,9943964,11,2457.743137,-5438.611944
-North Dakota,Bismark,739482,25,3353.852527,-6969.885995
-Ohio,Columbus,11594163,20,2745.713941,-5740.333047
-Oklahoma,Oklahoma City,3878051,28,2437.907842,-6745.529939
-Oregon,Salem,3970239,17,3087.113158,-8508.708939
-Pennsylvannia,Harrisburg,12787209,49,2766.844582,-5316.725083
-Rhode Island,Providence,1055173,7,2873.599926,-4939.561791
-South Carolina,Columbia,4832482,3,2336.0618,-5602.901761
-South Dakota,Pierre,853175,29,3048.420898,-6939.273936
-Tennessee,Nashville,6549352,1,2484.813971,-6001.990118
-Texas,Austin,26956958,2,2079.553076,-6760.399775
-Utah,Salt Lake City,2942902,10,2800.161701,-7738.504927
-Vermont,Montpelier,626562,24,3041.441844,-5019.082628
-Virginia,Richmond,8326289,23,2579.287058,-5357.141346
-Washington,Olympia,7061530,13,3232.176343,-8499.297495
-
+Alabama,Montgomery,4849377,27,2224.755326,5972.666236,70,Nashville,261.71,Atlanta,159.47,Tallahassee,194.49,Jefferson City;586.16;
+Arizona,Phoenix,6731484,36,2317.510721,7746.622801,75,Salt Lake City,482.72,Denver,636.71,Sante Fe,438.78,Sacramento,734.22,Carson City;652.74;
+Arkansas,Little Rock,2966369,6,2317.510721,6378.636023,70,Jefferson City,332.76,Nashville,412.13,Jackson,173.77,Baton Rouge,232.21,Austin,449.85,Oklahoma City;386.14;
+California,Sacramento,38802500,43,2646.620604,8402.95215,70,Salem,453.01,Carson City,128.54,Phoenix;734.22;
+Colorado,Denver,5355866,26,2719.450766,7252.819687,75,Cheyenne,107.64,Lincoln,573.01,Topeka,643.45,Oklahoma City,580.18,Santa Fe,279.29,Phoenix,636.71,Salt Lake City;492.35;
+Connecticut,Hartford,3596677,48,2867.172321,5024.481265,65,Boston,120.36,Providence,85.16,Albany;101.01;
+Delaware,Dover,935614,39,2688.532301,5219.512747,55,Harrisburg,124.83,Trenton,89.80,Annapolis;83.06;
+District of Columbia,Washington,658893,9,2669.294145,5327.402503,55,Annapolis,29.71,Richmond;96;
+Florida,Tallahassee,19893297,38,2087.339926,5835.037637,70,Montgomery,194.49,Atlanta;224.71;
+Georgia,Atlanta,10097343,5,2312.014105,5839.187243,70,Raleigh,426.26,Columbia,237.51,Tallahassee,224.71,Montgomery,159.47,Nashville;237.41;
+Idaho,Boise,1634464,19,2993.594489,8037.786822,80,Helena,356.81,Cheyenne,807.06,Salt Lake City,356.35,Carson City,389.23,Salem,480.12,Olympia;519.53;
+Illinois,Springfield,12880580,47,2736.627691,6182.91294,70,Madison,222.91,Indianapolis,215.89,Frankfort,333.36,Jefferson City,211.36,Des Moines;316.29;
+Indiana,Indianapolis,6596855,40,2729.756921,5967.133428,70,Jefferson City,416.35,Columbus,227.36,Frankfort,143.86,Springfield;215.89;
+Iowa,Des Moines,3107126,42,2853.430781,6476.843365,70,St. Paul,238.11,Madison,313.52,Springfield,316.29,Jefferson City,226.902,Lincoln,215.00,Pierre;501.86;
+Kansas,Topeka,2904021,35,2684.409839,6610.322358,75,Lincoln,141.52,Jefferson City,236.98,Oklahoma City,281.15,Denver;643.45;
+Kentucky,Frankfort,4413457,22,2624.63414,5868.926086,65,Columbus,176.63,Charleston,223.40,Richmond,513.79,Nashville,193.02,Jeffeson City,507.54,Springfield,333.36,Indianapolis;143.86;
+Louisiana,Baton Rouge,4649676,33,2097.646081,6303.943115,75,Little Rock,232.21,Jefferson City,557.28,Austin;456.82;
+Maine,Augusta,1330089,32,3045.125264,4827.37498,75,Concord;142.64;
+Maryland,Annapolis,5976407,8,2691.967686,5302.504867,65,Harrisburg,76.22,Dover,83.06,Richmond,125.23,Charleston;347.97;
+Massachusetts,Boston,6745408,30,2911.145249,4912.441903,65,Concord,68.56,Providence,46.32,Hartford,120.36,Albany,191.32,Montpelier;168.37;
+Michigan,Lansing,9909877,41,2904.961556,5852.327662,70,Columbus,194.69,Indianapolis,209.47,Madison;333.99;
+Minnesota,St. Paul,5457173,16,3088.411115,-6438.390349,70,Madison,287.11,Des Moines, 238.11,Pierre,502.48,Bismarck;594.09;
+Mississippi,Jackson,2994079,18,2214.449171,-6238.725141,70,Nashville,359.36,Montgomery,266.2584,Baton Rouge,133.78,Little Rock;173.77;
+Missouri,Jefferson City,6063589,31,2650.258952,-6375.820031,70,Des Moines,226.09,Springfield,211.36,Frankfort,507.54,Nashville,408.80,Little Rock,332.76,Oklahoma City,426.35,Topeka,236.98,Lincoln;346.24;
+Montana,Helena,1023579,15,3201.490591,-7747.800667,75,Bismark,792.7,Pierre,822.89,Cheyenne,624.46,Boise;356.81;
+Nebraska,Lincoln,1881503,21,2803.952168,-6686.076528,75,Pierre,351.96,Des Moines,215.00,Jefferson City,346.24,Topeka,141.52,Denver,573.01,Cheyenne;562.50;
+Nevada,Carson City,2839099,45,2690.658736,-8282.190109,75,Boise,389.24,Salt Lake City,554.6,Phoenix,652.74,Sacramento,128.54,Salem;456.6;
+New Hampshire,Concord,1326813,37,2969.553184,-4948.344778,70,Augusta,142.64,Boston,68.56,Montpelier;100.86;
+New Jersey,Trenton,8938175,46,2763.543314,-5170.14198,65,Albany,180.57,Dover,89.80,Harrisburg;146.62;
+New Mexico,Santa Fe,2085572,4,2450.613407,-7328.520603,75,Denver,279.29,Oklahoma City,583.13,Austin,678.56,Phoenix,438.78,Salt Lake City;538.77;
+New York,Albany,19746227,50,2931.058733,-5102.724783,65,Montpelier,138.5,Boston,191.32,Hartford,101.01,Trenton,180.57,Harrisburg;269.75;
+North Carolina,Raleigh,9943964,11,2457.743137,-5438.611944,70,Richmond,146.32,Colombia,204.44,Atlanta,426.26,Nashville;564.03;
+North Dakota,Bismark,739482,25,3353.852527,-6969.885995,75,St. Paul,594.09,Pierre,306.96,Helena;792.7;
+Ohio,Columbus,11594163,20,2745.713941,-5740.333047,70,Harrisburg,424.13,Charleston,145.68,Frankfort,176.63,Indianapolis,227.36,Lansing;194.69;
+Oklahoma,Oklahoma City,3878051,28,2437.907842,-6745.529939,75,Topeka,281.15,Jefferson City,426.36,Little Rock,386.14,Austin,358.66,Santa Fe,583.13,Denver;580.18;
+Oregon,Salem,3970239,17,3087.113158,-8508.708939,65,Olympia,145.37,Boise,480.12,Carson City,456.60,Sacramento;453.13;
+Pennsylvannia,Harrisburg,12787209,49,2766.844582,-5316.725083,65,Albany,269.75,Trenton,146.62,Dover,124.83,Annapolis,76.22,Charleston,354.51,Colombus;424.13;
+Rhode Island,Providence,1055173,7,2873.599926,-4939.561791,65,Boston,46.32,Hartford;85.16;
+South Carolina,Columbia,4832482,3,2336.0618,-5602.901761,70,Raleigh,204.44,Atlanta;237.51;
+South Dakota,Pierre,853175,29,3048.420898,-6939.273936,75,Bismarck,306.96,St. Paul,502.48,Des Moines,501.86,Lincoln,351.96,Cheyenne,380.02,Helena;822.89;
+Tennessee,Nashville,6549352,1,2484.813971,-6001.990118,70,Frankfort,193.02,Richmond,651.73,Raleigh,564.03,Atlanta,237.41,Montgomery,261.71,Jackson,359.36,Little Rock,412.13,Jefferson City;408.8;
+Texas,Austin,26956958,2,2079.553076,-6760.399775,75,Oklahoma City,358.66,Little Rock,449.85,Baton Rouge,456.82,Santa Fe;678.56;
+Utah,Salt Lake City,2942902,10,2800.161701,-7738.504927,80,Boise,356.35,Cheyenne,491.13,Denver,492.35,Santa Fe,538.77,Phoenix,482.72,Carson City;554.60;
+Vermont,Montpelier,626562,24,3041.441844,-5019.082628,65,Concord,100.86,Boston,168.37,Albany;138.49;
+Virginia,Richmond,8326289,23,2579.287058,-5357.141346,70,Annapolis,125.23,Raleigh,146.32,Nashville,651.73,Frankfort,513.79,Charleston;293.94;
+Washington,Olympia,7061530,13,3232.176343,-8499.297495,70,Boise,519.53,Salem;145.37;
+West Virginia,Charleston,1850326,44,2634.905735,-5645.766776,70,Harrisburg,354.51,Annapolis,347.97,Richmond,293.94,Frankfort,223.40,Columbus;145.68;
+Wisconsin,Madison,5757564,12,43.074733,-89.384444,65,Lansing,333.99,Springfield,222.91,Des Moines,313.52,St. Paul;287.11;
+Wyoming,Cheyenne,584153,34,41.145548,-104.802042,80,Helena,624.46,Pierre,380.02,Lincoln,562.50,Denver,107.64,Salt Lake City,491.13,Boise;807.06;

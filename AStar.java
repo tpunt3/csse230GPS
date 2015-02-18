@@ -43,7 +43,7 @@ public class AStar {
 					if (!current.p.contains(currentNeighbor)){
 						LinkedList<City> clone = (LinkedList<City>) current.p.clone();
 						clone.add(neighbors.get(i));
-						double cost = current.cost + currentNeighbor.distances.get(i);
+						double cost = current.cost + currentNeighbor.Distance.get(i);
 						double f = cost +  graph.ShortestConnection(currentNeighbor,end);
 						Path newPath = new Path(clone, cost, f);
 						open.add(newPath);

@@ -30,7 +30,7 @@ public class City {
 		
 		information=information.substring(cityEnd+1);
 		int popEnd = information.indexOf(',');
-		System.out.println("population as string: "+information.substring(0,popEnd));
+//		System.out.println("population as string: "+information.substring(0,popEnd));
 		this.Population = Integer.parseInt(information.substring(0,popEnd));
 		
 		information=information.substring(popEnd+1);
@@ -56,7 +56,7 @@ public class City {
 			neighborEnd = information.indexOf(',');
 			this.neighborString.add(information.substring(0,neighborEnd));
 			information=information.substring(neighborEnd+1);
-			System.out.println("info is: "+information);
+//			System.out.println("info is: "+information);
 			distEnd = information.indexOf(',');
 			this.Distance.add(Double.parseDouble(information.substring(0,distEnd)));
 			information = information.substring(distEnd+1);

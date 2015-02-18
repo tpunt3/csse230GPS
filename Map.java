@@ -15,11 +15,11 @@ public class Map {
 	public void DrawStars() {
 		for(int i = 0; i < starList.size()-1; i++) {
 			if(starList.get(i).getValue()==true) {
-				starList.get(i).paintComponent(graphics, Color.RED, 0, 0);
+				starList.get(i).paintComponent(graphics);
 				// where the 0's are the x and y locations of where to draw the object
 			}
 			else {
-				starList.get(i).paintComponent(graphics, Color.BLACK, 0, 0);
+				starList.get(i).paintComponent(graphics);
 				// where the 0's are the x and y locations of where to draw the object
 			}
 		}

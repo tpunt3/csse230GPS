@@ -7,16 +7,18 @@ import javax.swing.JComboBox;
 
 public class StartBox<E> extends JComboBox<E> {
 	private POIPanel pPanel;
+	private MapPanel mPanel;
 	
 	public StartBox(){
 		super();
 		addActionListener(this);
 	}
 	
-	public StartBox(E[] items, POIPanel pP){
+	public StartBox(E[] items, POIPanel pP, MapPanel mP){
 		super(items);
 		addActionListener(this);
 		this.pPanel = pP;
+		this.mPanel = mP;
 	}
 	
 	@Override
@@ -43,7 +45,13 @@ public class StartBox<E> extends JComboBox<E> {
 			}
 		}
 		
-		System.out.println(cities);
+		for(int  i = 0; i<this.mPanel.dotList.size(); i++){
+			this.mPanel.dotList.get(i).setBlack();
+		}
+		
+		
+		this.mPanel.dotList.get(j).setStart();
+		this.mPanel.repaint();
 		
 		this.pPanel.aboutOrigin.setText(null);
 		this.pPanel.aboutOrigin.insert("Origin City: "+this.getSelectedItem()

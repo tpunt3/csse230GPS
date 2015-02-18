@@ -7,16 +7,18 @@ import javax.swing.JComboBox;
 
 public class EndBox<E> extends JComboBox<E> {
 	private POIPanel pPanel;
+	private MapPanel mPanel;
 
 	public EndBox(){
 		super();
 		addActionListener(this);
 	}
 	
-	public EndBox(E[] items, POIPanel pP){
+	public EndBox(E[] items, POIPanel pP, MapPanel mP){
 		super(items);
 		addActionListener(this);
 		this.pPanel = pP;
+		this.mPanel = mP;
 	}
 	
 	@Override
@@ -43,6 +45,14 @@ public class EndBox<E> extends JComboBox<E> {
 				j=i;
 			}
 		}
+		
+		for(int  i = 0; i<this.mPanel.dotList.size(); i++){
+			this.mPanel.dotList.get(i).setBlack();
+		}
+		
+		
+		this.mPanel.dotList.get(j).setStop();
+		this.mPanel.repaint();
 		
 		this.pPanel.aboutDest.setText(null);
 		this.pPanel.aboutDest.insert("Destination City: "+this.getSelectedItem()

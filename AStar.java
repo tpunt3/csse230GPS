@@ -22,11 +22,11 @@ public class AStar {
 	//need path, overall #
 	
 	public LinkedList<City> shortDist(City start, City end, LinkedList allCities, Graph graph){
-		this.graph = graph;
 		PriorityQueue<Path> open = new PriorityQueue<Path>();
 		LinkedList<City> l = new LinkedList<City>();
 		l.add(start);
 		Path p = new Path(l,0,graph.ShortestConnection(start,end));
+		open.add(p);
 		while(!open.isEmpty()){
 			
 			Path current = open.poll();
@@ -41,15 +41,16 @@ public class AStar {
 				for (int i =0; i < neighbors.size(); i++){
 					City currentNeighbor = neighbors.get(i);
 					if (!current.p.contains(currentNeighbor)){
-						current.p.clone();
-						current.p.add(neighbors.get(i));
-						current.cost = current.cost+currentNeighbor.f;
-						current.f = current.cost + graph.ShortestConnection(currentNeighbor, end);
+						LinkedList<City> clone = (LinkedList<City>) current.p.clone();
+						clone.add(neighbors.get(i));
+						double cost = current.cost + currentNeighbor.distances.get(i);
+						double f = cost +  graph.ShortestConnection(currentNeighbor,end);
+						Path newPath = new Path(clone, cost, f);
+						open.add(newPath);
 					}
 					//see if its in the path, if in path, do nothing, use contains, implement comparable in city
 					//if not contained, clone path, add the current neighbor, update cost with cost+neighbors cost, recalculate F (sum of the cost and geometric distance)
 				}
-				
 			}
 		}	
 		return null;

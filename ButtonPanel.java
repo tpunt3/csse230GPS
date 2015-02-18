@@ -18,20 +18,11 @@ public class ButtonPanel extends Panel {
 	private DirectionsPanel dPanel;
 	private POIPanel pPanel;
 
-	public ButtonPanel(MapPanel mP, DirectionsPanel dP, POIPanel pP) throws IOException{
+	public ButtonPanel(MapPanel mP, DirectionsPanel dP, POIPanel pP, ArrayList<City> cities) throws IOException{
 		this.setBackground(Color.WHITE);
 		this.mPanel = mP;
 		this.dPanel = dP;
 		this.pPanel = pP;
-		
-		ReadFile file1 = new ReadFile(
-				"C:/EclipseWorkspaces/csse230/CrossCountryTouring/src/CapitalInfo");
-		String[] arrayOfLines = file1.OpenFile();
-		ArrayList<City> cities = new ArrayList<City>();
-		for (int i = 0; i < arrayOfLines.length - 1; i++) {
-			cities.add(new City(arrayOfLines[i]));
-		}
-		
 		
 		
 		//making the buttons
@@ -40,18 +31,17 @@ public class ButtonPanel extends Panel {
 	
 		//making the comboboxes
 		
-		ArrayList<City> city = cities;
 		
-		Object[] stuff = new Object[city.size()];
+		Object[] stuff = new Object[cities.size()];
 		
-		for(int i = 0; i < city.size(); i++){
-			stuff[i] = city.get(i).CityName;
+		for(int i = 0; i < cities.size(); i++){
+			stuff[i] = cities.get(i).CityName;
 		}
 		
 		//this.start = new JComboBox(capitals);
-		this.start = new StartBox(stuff, this.pPanel);
+		this.start = new StartBox(stuff, this.pPanel, this.mPanel);
 		start.setSelectedIndex(0);
-		this.end = new EndBox(stuff, this.pPanel);
+		this.end = new EndBox(stuff, this.pPanel, this.mPanel);
 		end.setSelectedIndex(0);
 		
 		//making the labels

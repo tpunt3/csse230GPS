@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 public class City {
@@ -13,8 +14,9 @@ public class City {
 	public double Latitude;
 	public int Population;
 	public int Rating;
-	public ArrayList<String> Neighbors = new ArrayList<String>();
+	public ArrayList<City> Neighbors = new ArrayList<City>();
 	public ArrayList<Double> Distance = new ArrayList<Double>();
+	public ArrayList<String> neighborString = new ArrayList<String>();
 	public City previous;
 	public double f;
 	public double g;
@@ -56,19 +58,19 @@ public class City {
 		information=information.substring(speedEnd+1);
 		while(information.contains(",")){
 			neighborEnd = information.indexOf(',');
-			this.Neighbors.add(information.substring(0,neighborEnd));
+			this.neighborString.add(information.substring(0,neighborEnd));
 			information=information.substring(neighborEnd+1);
-			
+			System.out.println("info is: "+information);
 			distEnd = information.indexOf(',');
 			this.Distance.add(Double.parseDouble(information.substring(0,distEnd)));
 			information = information.substring(distEnd+1);
 		}
 		int lastNeighborEnd = information.indexOf(';');
-		Neighbors.add(information.substring(0,lastNeighborEnd));
+		neighborString.add(information.substring(0,lastNeighborEnd));
 		information = information.substring(lastNeighborEnd+1);
 		
 		distEnd = information.indexOf(';');
-		Neighbors.add(information.substring(0,distEnd));
+		neighborString.add(information.substring(0,distEnd));
 	
 		
 			

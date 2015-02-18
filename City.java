@@ -17,10 +17,6 @@ public class City {
 	public ArrayList<City> Neighbors = new ArrayList<City>();
 	public ArrayList<Double> Distance = new ArrayList<Double>();
 	public ArrayList<String> neighborString = new ArrayList<String>();
-	public City previous;
-	public double f;
-	public double g;
-	public double h;
 	public int speedLimit;
 	
 	
@@ -102,10 +98,6 @@ public class City {
 		this.Neighbors = elements;
 	}
 	
-	public void setPrevious(City p){
-		this.previous = p;
-	}
-	
 	public String GetName() {
 		return this.CityName;
 	}
@@ -132,30 +124,6 @@ public class City {
 	
 	public ArrayList GetNeighbors(City current){
 		return current.Neighbors;
-	}
-	
-	public void setF(double x){
-		this.f = x;
-	}
-	
-	public double getF(){
-		return this.g;
-	}
-	
-	public void setG(double x){
-		this.g = x;
-	}
-	
-	public double getG(){
-		return this.g;
-	}
-	
-	public void setH(double x){
-		this.h = x;
-	}
-	
-	public double getH(){
-		return this.h;
 	}
 	
 	public int GetSpeedLimit() {

@@ -8,36 +8,41 @@ import javax.swing.JComboBox;
 public class EndBox<E> extends JComboBox<E> {
 	private POIPanel pPanel;
 	private MapPanel mPanel;
+	private Graph US;
 
 	public EndBox(){
 		super();
 		addActionListener(this);
 	}
 	
-	public EndBox(E[] items, POIPanel pP, MapPanel mP){
+	public EndBox(E[] items, POIPanel pP, MapPanel mP, Graph US){
 		super(items);
 		addActionListener(this);
 		this.pPanel = pP;
 		this.mPanel = mP;
+		this.US = US;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		
+//		
+//		ReadFile file1 = new ReadFile(
+//				"C:/EclipseWorkspaces/csse230/CrossCountryTouring/src/CapitalInfo");
+//		String[] arrayOfLines = null;
+//		try {
+//			arrayOfLines = file1.OpenFile();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		ArrayList<City> cities = new ArrayList<City>();
+//		for (int i = 0; i < arrayOfLines.length - 1; i++) {
+//			cities.add(new City(arrayOfLines[i]));
+//		}
 		
-		ReadFile file1 = new ReadFile(
-				"C:/EclipseWorkspaces/csse230/CrossCountryTouring/src/CapitalInfo");
-		String[] arrayOfLines = null;
-		try {
-			arrayOfLines = file1.OpenFile();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		ArrayList<City> cities = new ArrayList<City>();
-		for (int i = 0; i < arrayOfLines.length - 1; i++) {
-			cities.add(new City(arrayOfLines[i]));
-		}
+		cities = US.cities;
 
 		int j = 0;
 		for(int i = 0; i<cities.size();i++){
@@ -45,6 +50,9 @@ public class EndBox<E> extends JComboBox<E> {
 				j=i;
 			}
 		}
+		
+
+		US.setEnd(cities.get(j));
 		
 		for(int  i = 0; i<this.mPanel.dotList.size(); i++){
 			this.mPanel.dotList.get(i).setBlack();

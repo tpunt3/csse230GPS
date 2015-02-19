@@ -22,7 +22,7 @@ public class TimeButton extends Button implements ActionListener {
 		// TODO Auto-generated constructor stub
 	}
 
-	public TimeButton(String buttonText, ButtonPanel parent, MapPanel mP, DirectionsPanel dP, POIPanel pPanel) {
+	public TimeButton(String buttonText, ButtonPanel parent, MapPanel mP, DirectionsPanel dP, POIPanel pPanel, Graph US) {
 		super(buttonText);
 		this.parent = parent;
 		this.mPanel = mP;

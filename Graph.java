@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 
 public class Graph {
@@ -13,9 +14,13 @@ public class Graph {
 	public double xDist;
 	public double yDist;
 	public double PTPDistance;
+	public City startCity;
+	public City endCity;
 	public HashMap<String, City> cityHash = new HashMap<String, City>();
 	public ArrayList<City> cities = new ArrayList<City>();
+	public LinkedList<City> linkedCities = new LinkedList<City>();
 	public Graph(String[] cityInfo) throws IOException{
+		
 		waypoints = new ArrayList();
 		this.xDist = 0;
 		this.yDist = 0;
@@ -26,6 +31,10 @@ public class Graph {
 			cities.add(currentCity);
 		}
 		
+		for (int i = 0; i < cities.size(); i++){
+			linkedCities.add(cities.get(i));
+		}
+		
 		//set all the neighbors
 		for(int i =0; i<cities.size(); i++){
 			for(int j=0;j<cities.get(i).neighborString.size();j++){
@@ -33,7 +42,7 @@ public class Graph {
 			}
 		}
 		
-		CCFrame newFrame = new CCFrame(cities);
+		CCFrame newFrame = new CCFrame(cities, this);
 		newFrame.setVisible(true);
 		newFrame.setTitle("CrossCountryTouring");
 	}
@@ -45,6 +54,9 @@ public class Graph {
 		this.yDist = 0;
 		this.PTPDistance = 0;
 		
+		System.out.println("start long:" + currentCity.GetLong() + " end long: " + nextCity.GetLong());
+		System.out.println("start lat:" + currentCity.GetLattitude() + " end lat: " + nextCity.GetLattitude());
+
 		this.xDist = (Math.abs(currentCity.GetLong()) - Math.abs(nextCity.GetLong()));
 		this.yDist = (Math.abs(currentCity.GetLattitude()) - Math.abs(nextCity.GetLattitude()));
 		this.PTPDistance = Math.sqrt(this.xDist*this.xDist + this.yDist*this.yDist);
@@ -94,6 +106,14 @@ public class Graph {
 		// This should get the shortest distance route from the A* stuff
 		
 		return this.bestRoute;
+	}
+	
+	public void setStart(City startCity){
+		this.startCity = startCity;
+	}
+	
+	public void setEnd(City endCity){
+		this.endCity = endCity;
 	}
 
 }

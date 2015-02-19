@@ -15,7 +15,7 @@ public class CCPanel extends JPanel {
 	DirectionsPanel dPanel;
 	POIPanel pPanel;
 
-	public CCPanel(CCFrame frame, ArrayList<City> cities) throws IOException {
+	public CCPanel(CCFrame frame, ArrayList<City> cities, Graph US) throws IOException {
 
 		super();
 		this.setPreferredSize(new Dimension(1250, 600));
@@ -26,7 +26,7 @@ public class CCPanel extends JPanel {
 		this.pPanel = new POIPanel();
 
 		this.mPanel = new MapPanel(bPanel);
-		this.bPanel = new ButtonPanel(mPanel, dPanel, pPanel,cities);
+		this.bPanel = new ButtonPanel(mPanel, dPanel, pPanel,cities,US);
 	
 		this.add(bPanel, BorderLayout.NORTH);
 

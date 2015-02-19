@@ -8,10 +8,14 @@ public class AStar {
 	private LinkedList<City> allCities;
 	private PriorityQueue<City> queue;
 	private Graph graph;
+	private City start;
+	private City end; 
 	
-	public AStar(City start, City end, LinkedList allCities) {
-		
+	public AStar(City start, City end, LinkedList allCities, Graph graph) {
+		this.graph = graph;
 		this.allCities = allCities;	
+		this.start = start;
+		this.end = end;
 		
 	}
 	
@@ -21,10 +25,12 @@ public class AStar {
 	//in order to insert into priority queue, need final F value, cost + heuristic value
 	//need path, overall #
 	
-	public LinkedList<City> shortDist(City start, City end, LinkedList allCities, Graph graph){
+	public LinkedList<City> shortDist(){
 		PriorityQueue<Path> open = new PriorityQueue<Path>();
 		LinkedList<City> l = new LinkedList<City>();
+		System.out.println(start);
 		l.add(start);
+		System.out.println(end);
 		Path p = new Path(l,0,graph.ShortestConnection(start,end));
 		open.add(p);
 		while(!open.isEmpty()){

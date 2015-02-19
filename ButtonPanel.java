@@ -18,7 +18,7 @@ public class ButtonPanel extends Panel {
 	private DirectionsPanel dPanel;
 	private POIPanel pPanel;
 
-	public ButtonPanel(MapPanel mP, DirectionsPanel dP, POIPanel pP, ArrayList<City> cities) throws IOException{
+	public ButtonPanel(MapPanel mP, DirectionsPanel dP, POIPanel pP, ArrayList<City> cities, Graph US) throws IOException{
 		this.setBackground(Color.WHITE);
 		this.mPanel = mP;
 		this.dPanel = dP;
@@ -26,8 +26,8 @@ public class ButtonPanel extends Panel {
 		
 		
 		//making the buttons
-		this.dButton = new DistanceButton("Shortest Distance", this, this.mPanel, this.dPanel, this.pPanel);
-		this.tButton = new TimeButton("Shortest Time",this, this.mPanel, this.dPanel, this.pPanel);
+		this.dButton = new DistanceButton("Shortest Distance", this, this.mPanel, this.dPanel, this.pPanel, US);
+		this.tButton = new TimeButton("Shortest Time",this, this.mPanel, this.dPanel, this.pPanel,US);
 	
 		//making the comboboxes
 		
@@ -39,9 +39,9 @@ public class ButtonPanel extends Panel {
 		}
 		
 		//this.start = new JComboBox(capitals);
-		this.start = new StartBox(stuff, this.pPanel, this.mPanel);
+		this.start = new StartBox(stuff, this.pPanel, this.mPanel, US);
 		start.setSelectedIndex(0);
-		this.end = new EndBox(stuff, this.pPanel, this.mPanel);
+		this.end = new EndBox(stuff, this.pPanel, this.mPanel, US);
 		end.setSelectedIndex(0);
 		
 		//making the labels

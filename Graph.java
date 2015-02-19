@@ -19,14 +19,14 @@ public class Graph {
 	public HashMap<String, City> cityHash = new HashMap<String, City>();
 	public ArrayList<City> cities = new ArrayList<City>();
 	public LinkedList<City> linkedCities = new LinkedList<City>();
-	public Graph(String[] cityInfo) throws IOException{
+	public Graph(String[] cityInfo, String[] poiInfo) throws IOException{
 		
 		waypoints = new ArrayList();
 		this.xDist = 0;
 		this.yDist = 0;
 		this.PTPDistance = 0;
 		for(int i = 0; i<cityInfo.length; i++){
-			City currentCity = new City(cityInfo[i]);
+			City currentCity = new City(cityInfo[i],poiInfo[i]);
 			cityHash.put(currentCity.CityName, currentCity);
 			cities.add(currentCity);
 		}
@@ -41,6 +41,7 @@ public class Graph {
 				cities.get(i).Neighbors.add(cityHash.get(cities.get(i).neighborString.get(j)));
 			}
 		}
+		
 		
 		CCFrame newFrame = new CCFrame(cities, this);
 		newFrame.setVisible(true);

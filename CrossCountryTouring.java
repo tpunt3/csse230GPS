@@ -8,9 +8,12 @@ public class CrossCountryTouring {
 	public static void main(String[] args) throws IOException {
 
 		ReadFile file1 = new ReadFile(
-				"C:/EclipseWorkspaces/csse230/CrossCountryTouring/src/CapitalInfo");
+				"C:/Users/harrislb/Documents/EclipseWorkspaces/csse220/230 Project/src/CapitalInfo");
 		String[] arrayOfLines = file1.OpenFile();
-		Graph USGraph = new Graph(arrayOfLines);
+		
+		ReadFile file2=new ReadFile("C:/Users/harrislb/Documents/EclipseWorkspaces/csse220/230 Project/src/poiandratings.txt");
+		String[] arrayOfPoi = file2.OpenFile();
+		Graph USGraph = new Graph(arrayOfLines,arrayOfPoi);
 
 	}
 

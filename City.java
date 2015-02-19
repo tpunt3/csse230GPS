@@ -18,9 +18,15 @@ public class City {
 	public ArrayList<Double> Distance = new ArrayList<Double>();
 	public ArrayList<String> neighborString = new ArrayList<String>();
 	public int speedLimit;
+	public String poi1;
+	public String poi2;
+	public String poi3;
+	public String poi1r;
+	public String poi2r;
+	public String poi3r;
 	
 	
-	public City(String information) {
+	public City(String information, String poi) {
 		int stateEnd = information.indexOf(',');
 		this.StateName = information.substring(0,stateEnd);
 		
@@ -68,7 +74,32 @@ public class City {
 		distEnd = information.indexOf(';');
 		Distance.add(Double.parseDouble(information.substring(0,distEnd)));
 	
+		//set POI
+		int capitalEnd = poi.indexOf(',');
+		poi=poi.substring(capitalEnd+1);
 		
+		int poi1end = poi.indexOf(',');
+		this.poi1=poi.substring(0,poi1end);
+		
+		poi=poi.substring(poi1end+1);
+		int poi1rend = poi.indexOf(',');
+		this.poi1r =poi.substring(0,poi1rend);
+		
+		poi=poi.substring(poi1rend+1);
+		int poi2end=poi.indexOf(',');
+		this.poi2=poi.substring(0,poi2end);
+		
+		poi=poi.substring(poi2end+1);
+		int poi2rend=poi.indexOf(',');
+		this.poi2r=poi.substring(0,poi2rend);
+		
+		poi=poi.substring(poi2rend+1);
+		int poi3end=poi.indexOf(',');
+		this.poi3=poi.substring(0,poi3end);
+		
+		poi=poi.substring(poi3end+1);
+		int poi3rend=poi.indexOf(';');
+		this.poi3r=poi.substring(0,poi3rend);
 			
 		
 		

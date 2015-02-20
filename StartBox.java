@@ -9,6 +9,7 @@ public class StartBox<E> extends JComboBox<E> {
 	private POIPanel pPanel;
 	private MapPanel mPanel;
 	private Graph US;
+	private int lastSelected;
 	
 	public StartBox(){
 		super();
@@ -21,24 +22,11 @@ public class StartBox<E> extends JComboBox<E> {
 		this.pPanel = pP;
 		this.mPanel = mP;
 		this.US = US;
+		this.lastSelected = 0;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		
-//		ReadFile file1 = new ReadFile(
-//				"C:/EclipseWorkspaces/csse230/CrossCountryTouring/src/CapitalInfo");
-//		String[] arrayOfLines = null;
-//		try {
-//			arrayOfLines = file1.OpenFile();
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		ArrayList<City> cities = new ArrayList<City>();
-//		for (int i = 0; i < arrayOfLines.length - 1; i++) {
-//			cities.add(new City(arrayOfLines[i]));
-//		}
 
 		ArrayList<City> cities = new ArrayList<City>();
 		cities = US.cities;
@@ -57,7 +45,7 @@ public class StartBox<E> extends JComboBox<E> {
 			this.mPanel.dotList.get(i).setBlack();
 		}
 		
-		
+		this.mPanel.dotList.get(lastSelected).setReallyBlack();
 		this.mPanel.dotList.get(j).setStart();
 		this.mPanel.repaint();
 		
@@ -65,6 +53,8 @@ public class StartBox<E> extends JComboBox<E> {
 		this.pPanel.aboutOrigin.insert("Origin City: "+this.getSelectedItem()
 				+"\nRating: " + cities.get(j).Rating 
 				+"\nPopulation: " + cities.get(j).Population,0);
+		
+		this.lastSelected = j;
 	}
 	
 }

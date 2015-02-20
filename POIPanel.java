@@ -4,6 +4,7 @@ import java.awt.Panel;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 
@@ -14,7 +15,6 @@ public class POIPanel extends Panel {
 	public JTextArea aboutPOI;
 
 	public POIPanel(){
-		//this.setSize(new Dimension(200, 200));
 		this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
 		JLabel about = new JLabel("About the Capitals:");
 		this.add(about,JPanel.CENTER_ALIGNMENT);		
@@ -35,10 +35,13 @@ public class POIPanel extends Panel {
 		JLabel poi = new JLabel("Points of Interest:");
 		this.add(poi);
 		this.aboutPOI = new JTextArea();
-		aboutPOI.setMaximumSize(new Dimension(450,300));
+		aboutPOI.setMaximumSize(new Dimension(100,100));
 		this.add(aboutPOI);
 		
-		
+		JScrollPane scrolly = new JScrollPane(aboutPOI);
+		scrolly.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		scrolly.setMaximumSize(new Dimension(450,320));
+		this.add(scrolly);		
 	}
 	
 }

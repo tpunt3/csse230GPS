@@ -331,6 +331,7 @@ public class MapPanel extends JPanel{
 		} catch (IOException ex) {
 			// handle exception...
 		}
+		
 		this.setVisible(true);
 		this.repaint();
 	}

@@ -54,9 +54,6 @@ public class Graph {
 		this.xDist = 0;
 		this.yDist = 0;
 		this.PTPDistance = 0;
-		
-		System.out.println("start long:" + currentCity.GetLong() + " end long: " + nextCity.GetLong());
-		System.out.println("start lat:" + currentCity.GetLattitude() + " end lat: " + nextCity.GetLattitude());
 
 		this.xDist = (Math.abs(currentCity.GetLong()) - Math.abs(nextCity.GetLong()));
 		this.yDist = (Math.abs(currentCity.GetLattitude()) - Math.abs(nextCity.GetLattitude()));

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 
 
 public class ButtonPanel extends Panel {
@@ -14,6 +15,8 @@ public class ButtonPanel extends Panel {
 	protected TimeButton tButton;
 	protected StartBox start;
 	protected EndBox end;
+	public MilesArea maxDist;
+	public MilesArea maxTime;
 	private MapPanel mPanel;
 	private DirectionsPanel dPanel;
 	private POIPanel pPanel;
@@ -44,12 +47,23 @@ public class ButtonPanel extends Panel {
 		this.end = new EndBox(stuff, this.pPanel, this.mPanel, US);
 		end.setSelectedIndex(0);
 		
+		
+		this.maxDist = new MilesArea(1,10);
+		this.maxTime = new MilesArea(1,10);
+		
+		
 		//making the labels
+		JLabel mTLabel = new JLabel("Max Time (in hours): ");
+		JLabel mDLabel = new JLabel("Max Distance (in miles): ");
 		JLabel tLabel = new JLabel("Calculate by: ");
 		JLabel fLabel = new JLabel("From: ");
 		JLabel eLabel = new JLabel("To: ");
 		
 		//adding the buttons and combo-boxes to the panel
+		this.add(mTLabel);
+		this.add(maxTime);
+		this.add(mDLabel);
+		this.add(maxDist);
 		this.add(fLabel);
 		this.add(start);
 		this.add(eLabel);

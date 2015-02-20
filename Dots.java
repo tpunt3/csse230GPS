@@ -25,6 +25,10 @@ public class Dots extends JPanel  {
 		this.setPreferredSize(new Dimension(r, r));
 	}
 	
+	public int getID(){
+		return this.ID;
+	}
+	
 	public void setStart() {
 		color = Color.green;
 	}
@@ -34,12 +38,19 @@ public class Dots extends JPanel  {
 	}
 	
 	public void setBlack() {
+		
+		if(color!=Color.red&&color!=Color.green){
+				color = Color.black;
+		}
+	}
+	
+	public void setReallyBlack(){
 		color = Color.black;
 	}
+	
 	public void setTravels() {
 		color = Color.yellow;
 	}
-
 	
 	@Override
 	public void paintComponent(Graphics graphics) {

@@ -15,7 +15,6 @@ Des Moines,Adventure Land Park,70,Salisbury House,100,Iowa Hall of Pride,141;
 Topeka,Brown v. Board of Education Historic Site,34,Combat Air Museum,15,Kansas Expo Center,76;
 Frankfort,Salato Wildlife Education Center,138,Daniel Boone Burial Site,112,Frankfort Grand Theater,140;
 Baton Rouge,Blue Bayou Water Park,72,USS Kidd,62,Rebecca Ruth Candy Factory,24;
-
 Augusta,Old Fort Wastern,102,Musical Wonder House,147,Viles Arboretum,98;
 Annapolis,National Cryptologic Museum,129,US Naval Academy,13,The William Paca House,133;
 Boston,Fenway Park,4,Boston Tea Party Ships and Museum,64,USS Constitution,37;

@@ -24,6 +24,7 @@ public class CCPanel extends JPanel {
 
 		this.dPanel = new DirectionsPanel(bPanel);
 		this.pPanel = new POIPanel();
+		this.pPanel.setMaximumSize(new Dimension(200,200));
 
 		this.mPanel = new MapPanel(bPanel);
 		this.bPanel = new ButtonPanel(mPanel, dPanel, pPanel,cities,US);
